@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Team Directory</title>
+        <link rel="stylesheet" href="{% static 'normalize.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css" />
+    </head>
+    <body>
+        <main>
+            <h1>Team Directory</h1>
+                {% for person in people %}
+                    <section>
+                        <img src="{{ person.image }}"/>
+                        <h2>Name: {{ person.name }}</h2>
+                        <p class="person-title">Title: {{ person.title }}</p>
+                        <p class="person-email">Email: {{ person.email }}</p>
+                    </section>
+                {% endfor %}
+        </main>
+    </body>
+</html>
